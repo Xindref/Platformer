@@ -73,7 +73,7 @@ const player = new Player({
         Jump: {
             imageSrc: './warrior/Jump.png',
             frameRate: 2,
-            frameBuffer: 7,
+            frameBuffer: 5,
         },
         Fall: {
             imageSrc: './warrior/Fall.png',
@@ -98,7 +98,7 @@ const player = new Player({
         JumpLeft: {
             imageSrc: './warrior/JumpLeft.png',
             frameRate: 2,
-            frameBuffer: 7,
+            frameBuffer: 5,
         },
     }
 });
@@ -162,13 +162,17 @@ function animate() {
 
         player.velocity.x = 0;
         if (keys.d.pressed) {
-            player.switchSprite('Run');
+            if (!player.isJumping) {
+                player.switchSprite('Run');
+            }
             player.velocity.x = player.speed;
             player.lastDirection = 'right';
             player.shouldPanCameraLeft({ canvas, camera });
         }
         else if (keys.a.pressed) {
-            player.switchSprite('RunLeft');
+            if (!player.isJumping) {
+                player.switchSprite('RunLeft');
+            }
             player.velocity.x = -player.speed;
             player.lastDirection = 'left';
             player.shouldPanCameraRight({ canvas, camera })
