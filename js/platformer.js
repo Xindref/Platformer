@@ -73,17 +73,17 @@ const player = new Player({
         Jump: {
             imageSrc: './warrior/Jump.png',
             frameRate: 2,
-            frameBuffer: 3,
+            frameBuffer: 7,
         },
         Fall: {
             imageSrc: './warrior/Fall.png',
             frameRate: 2,
-            frameBuffer: 3,
+            frameBuffer: 5,
         },
         FallLeft: {
             imageSrc: './warrior/FallLeft.png',
             frameRate: 2,
-            frameBuffer: 3,
+            frameBuffer: 5,
         },
         RunLeft: {
             imageSrc: './warrior/RunLeft.png',
@@ -98,7 +98,7 @@ const player = new Player({
         JumpLeft: {
             imageSrc: './warrior/JumpLeft.png',
             frameRate: 2,
-            frameBuffer: 3,
+            frameBuffer: 7,
         },
     }
 });
